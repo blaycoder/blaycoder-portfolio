@@ -9,7 +9,7 @@ const about = {
   description:
     "I'm a Frontend Developer and an alumnus of Altschool Africa. I'm passionate about sharing knowledge, documentation, contributing to open source and others. I’m currently learning at Alx Africa. I create technical content (on my Medium, and YouTube). I build useful projects. I believe the impossible can become possible if a step is taken and focus is constant.",
   resume:
-    "https://drive.google.com/file/d/1fMphe8XXhwG-bwa33ATwiKwErMj9X4Ab/view?usp=sharing",
+    "https://drive.google.com/file/d/1A0LYqqSDUD3dglzGq4CcX3YOLaYL2sZE/view?usp=sharing",
   social: {
     linkedin: "https://www.linkedin.com/in/ayomide-onatola-3180281a5/",
     github: "https://github.com/blaycoder",
