@@ -115,6 +115,7 @@ const skills = [
   "TypeScript",
   "ReactJs",
   "VueJs",
+  "Nextjs",
   "WordPress",
   "Shopify",
   "Material UI",
