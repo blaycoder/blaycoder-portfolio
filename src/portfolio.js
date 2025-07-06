@@ -7,7 +7,7 @@ const about = {
   name: "Ayomide",
   role: "Front End Engineer",
   description:
-    "I'm a Frontend Developer and an alumnus of Altschool Africa. I'm passionate about sharing knowledge, documentation, contributing to open source and others. I’m currently learning at Alx Africa. I create technical content (on my Medium, and YouTube). I build useful projects. I believe the impossible can become possible if a step is taken and focus is constant.",
+    "I'm a Frontend Developer and an alumnus of Altschool Africa. I'm passionate about sharing knowledge, documentation, contributing to open source and others. I create technical content (on my Medium, and YouTube). I build useful projects. I believe the impossible can become possible if a step is taken and focus is constant.",
   resume:
     "https://drive.google.com/file/d/1yi9G4Imf1Ie41fKmY41OUVvJvWSG0wfM/view?usp=sharing",
   social: {
