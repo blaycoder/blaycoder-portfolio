@@ -1,0 +1,125 @@
+.exit-intent-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: exitIntentOverlayIn 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exit-intent-overlay {
+    animation: none;
+  }
+}
+
+@keyframes exitIntentOverlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.exit-intent-modal {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  padding: var(--space-7);
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: exitIntentModalIn 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exit-intent-modal {
+    animation: none;
+  }
+}
+
+@keyframes exitIntentModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.exit-intent-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-2);
+  color: var(--clr-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.exit-intent-close:hover,
+.exit-intent-close:focus-visible {
+  color: var(--clr-fg);
+  background-color: var(--clr-bg-alt);
+}
+
+.exit-intent-title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--clr-fg-alt);
+  margin: 0 0 var(--space-4) 0;
+  padding-right: var(--space-8);
+}
+
+.exit-intent-message {
+  font-size: var(--text-small);
+  line-height: var(--leading-relaxed);
+  color: var(--clr-fg);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.exit-intent-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.exit-intent-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--clr-primary);
+  background-color: var(--clr-bg-alt);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.exit-intent-link:hover,
+.exit-intent-link:focus-visible {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  border-color: var(--clr-primary);
+}

@@ -1,4 +1,16 @@
 .contact {
   flex-direction: column;
-  gap:1em;
+  gap: var(--space-5);
+  text-align: center;
+}
+
+.contact p {
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  color: var(--clr-fg);
+  margin: 0;
+}
+
+.contact .btn--outline {
+  margin: 0 auto;
 }
