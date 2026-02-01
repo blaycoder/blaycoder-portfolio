@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo } from "react";
+import PropTypes from "prop-types";
 import { motion, useInView, useAnimation } from "framer-motion";
 
 const prefersReducedMotion = () =>
@@ -62,4 +63,13 @@ export const Reveal = ({ children, width = "fit-content" }) => {
       )}
     </div>
   );
+};
+
+Reveal.propTypes = {
+  children: PropTypes.node.isRequired,
+  width: PropTypes.string,
+};
+
+Reveal.defaultProps = {
+  width: "fit-content",
 };
