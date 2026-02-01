@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { ThemeContext } from "./contexts/theme";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
+import Experience from "./components/Experience/Experience";
+import ExitIntentModal from "./components/ExitIntentModal/ExitIntentModal";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
@@ -14,17 +16,19 @@ const App = () => {
 
   return (
     <div id="top" className={`${themeName} app`}>
-      <Header />
-
-      <main>
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-
+      <div className="app__wrap">
+        <Header />
+        <main>
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
       <ScrollToTop />
-      <Footer />
+      <ExitIntentModal />
     </div>
   );
 };
