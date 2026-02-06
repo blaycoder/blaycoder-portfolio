@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
-import CloseIcon from "@material-ui/icons/Close";
-import EmailIcon from "@material-ui/icons/Email";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import CloseIcon from "@mui/icons-material/Close";
+import EmailIcon from "@mui/icons-material/Email";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { about, contact } from "../../portfolio";
 import "./ExitIntentModal.css";
 
