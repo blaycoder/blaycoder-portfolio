@@ -9,6 +9,7 @@ export type Project = {
   stack: string[];
   sourceCode?: string;
   livePreview?: string;
+  npmPackage?: string;
   links?: ProjectLink[];
   credit?: string;
   image?: string;
@@ -64,19 +65,20 @@ export const projects: Project[] = [
     name: "SpaceHQ",
     featured: true,
     shortDescription:
-      "Production React.js SaaS for a UK co-working and virtual address provider — signup flows, customer and admin dashboards, subscription management.",
+      "Production React.js SaaS for a UK co-working and virtual address provider — signup and plan-selection flows with Stripe Checkout, customer and admin dashboards, subscription management.",
     description:
-      "Built a production React.js SaaS platform for a UK co-working and virtual address provider. Implemented signup and plan flows, customer and admin dashboards, and subscription management with TanStack Query, Zustand, Stripe, and Framer Motion. Applied security patterns including safeUser whitelisting and idempotency keys.",
+      "Built a production React.js SaaS platform for SpaceHQ Ltd, a UK co-working and virtual address provider. Implemented signup and plan-selection flows with Stripe Checkout, customer and admin dashboards, and subscription management using TanStack Query, Zustand, Stripe, and Framer Motion. Applied security patterns including safeUser whitelisting and idempotency keys on payment flows.",
     stack: ["React.js", "TanStack Query", "Zustand", "Stripe", "Framer Motion"],
+    livePreview: "https://spacehqltd.com/",
   },
   {
     id: "saabis-beauty",
     name: "Saabi's Beauty",
     featured: true,
     shortDescription:
-      "WordPress hair salon site with a custom Booking Pro plugin — Stripe + Paystack checkout and deposit logic on PHP 8.2.",
+      "WordPress hair salon site with a custom-built Booking Pro plugin — Stripe + Paystack checkout, deposit and fee logic, PHP 8.2 compatible.",
     description:
-      "Developed saabisbeauty.co.uk, a WordPress hair salon website with a custom Booking Pro plugin featuring Stripe and Paystack checkout, deposit and fee logic, built on PHP 8.2.",
+      "Developed saabisbeauty.co.uk, a WordPress hair salon website featuring a custom-built Booking Pro plugin with Stripe and Paystack checkout, deposit and fee logic, built on PHP 8.2.",
     stack: ["WordPress", "PHP 8.2", "Stripe", "Paystack"],
     livePreview: "https://saabisbeauty.co.uk",
   },
@@ -85,17 +87,19 @@ export const projects: Project[] = [
     name: "Sentinel",
     featured: true,
     shortDescription:
-      "Open-source static analysis CLI that catches API contract mismatches before deployment — MIT licensed, minimal deps.",
+      "Open-source static analysis CLI that catches API contract mismatches before deployment — MIT licensed, zero/minimal runtime deps, npm workspaces monorepo.",
     description:
-      "Created Sentinel, an open-source static analysis CLI that catches API contract mismatches before deployment. MIT licensed with zero/minimal dependencies, built as an npm workspaces monorepo.",
+      "Created Sentinel, an open-source static analysis CLI that catches API contract mismatches before deployment. MIT licensed with zero/minimal runtime dependencies, published as @sentinel-scan/core and built as an npm workspaces monorepo.",
     stack: ["Node.js", "TypeScript", "CLI", "npm workspaces"],
     sourceCode: "https://github.com/blaycoder/sentinel",
-    image: "/projects/sentinel-terminal.svg",
+    npmPackage: "https://www.npmjs.com/package/@sentinel-scan/core",
   },
   {
     id: "aki-solutions",
     name: "AKI Solutions Website (UK & Nigeria)",
     featured: false,
+    shortDescription:
+      "Revamped corporate sites for UK and Nigeria — migrated legacy stack to React.js, Bootstrap, and Framer Motion.",
     description:
       "Revamped the entire website to improve visual appeal and attract prospective clients. Migrated the tech stack from HTML, CSS, JavaScript, and PHP to React.js, Bootstrap, and Framer Motion.",
     stack: ["React.js", "Bootstrap", "Framer Motion", "PHP"],
@@ -108,6 +112,8 @@ export const projects: Project[] = [
     id: "charity-management",
     name: "Charity Management System",
     featured: false,
+    shortDescription:
+      "Charity portal frontend with admin dashboard, analytics charts, CRUD operations, and API integration.",
     description:
       "Built the frontend of a charity management portal featuring an admin dashboard, analytics and reporting charts, CRUD operations, and API integration.",
     stack: ["React.js", "Tailwind CSS", "Recharts"],
@@ -117,6 +123,8 @@ export const projects: Project[] = [
     id: "may-portfolio",
     name: "May Nwokoro Portfolio",
     featured: false,
+    shortDescription:
+      "Modern responsive personal portfolio with smooth animations and clean UI to showcase creative work.",
     description:
       "Designed and developed a modern, responsive personal portfolio with smooth animations and clean UI to showcase her work.",
     stack: ["React.js", "Tailwind CSS", "GSAP"],
@@ -126,6 +134,8 @@ export const projects: Project[] = [
     id: "carefinder",
     name: "Carefinder",
     featured: false,
+    shortDescription:
+      "Location-based web app to find the nearest hospital or clinic in Nigeria.",
     description:
       "Developed a web application to help find the nearest hospital or clinic in Nigeria based on user location.",
     stack: ["TailwindCSS", "ReactJs", "Vercel", "NextJs"],
@@ -136,6 +146,8 @@ export const projects: Project[] = [
     id: "simi-portfolio",
     name: "Simileoluwa Ajisafe Portfolio",
     featured: false,
+    shortDescription:
+      "Responsive personal portfolio with smooth animations and a clean, modern UI.",
     description:
       "Designed and developed a modern, responsive personal portfolio with smooth animations and clean UI.",
     stack: ["React.js", "Tailwind CSS", "GSAP"],
@@ -145,82 +157,32 @@ export const projects: Project[] = [
     id: "bookstore",
     name: "An Online Bookstore",
     featured: false,
+    shortDescription: "WordPress e-commerce platform for selling books online.",
     description: "E-commerce platform for selling books online.",
     credit: "Created during tenure at AKI Solutions. Copyright AKI Solutions.",
     stack: ["WordPress"],
     livePreview: "https://simcomfort.co.uk/",
   },
   {
-    id: "tbs-academy",
-    name: "TBS Academy Website",
-    featured: false,
-    description: "Educational resources and courses for students.",
-    credit: "Created during tenure at AKI Solutions. Copyright AKI Solutions.",
-    stack: ["WordPress"],
-    livePreview: "https://mytbsacademy.com/",
-  },
-  {
     id: "simi-birthday",
     name: "Simi's Birthday",
     featured: false,
+    shortDescription: "Personalized interactive birthday webpage built with React.",
     description: "Personalized birthday webpage.",
     stack: ["TailwindCSS", "ReactJs"],
     sourceCode: "https://github.com/blaycoder/simi-birthday",
     livePreview: "https://simi-birthday.vercel.app/",
   },
   {
-    id: "github-repo-portfolio",
-    name: "GitHub Repo Portfolio",
-    featured: false,
-    description: "Portfolio website that pulls and displays GitHub repository data.",
-    stack: ["TailwindCSS", "ReactJs", "Vercel", "GitHub API"],
-    sourceCode: "https://github.com/blaycoder/github-repo-portfolio",
-    livePreview: "https://github-repo-portfolio.vercel.app/",
-  },
-  {
     id: "coffee-shop",
     name: "Coffee Shop Website",
     featured: false,
+    shortDescription:
+      "Static coffee shop site with menu, location, and contact details on GitHub Pages.",
     description: "Coffee shop website with menu, location, and contact details.",
     stack: ["HTML", "CSS", "Javascript", "GitHub Pages"],
     sourceCode: "https://github.com/blaycoder/our-coffee-shop",
     livePreview: "https://blaycoder.github.io/our-coffee-shop/",
-  },
-  {
-    id: "school-dashboard",
-    name: "School Management System Dashboard",
-    featured: false,
-    description: "Admin dashboard for student data, attendance, and performance.",
-    stack: ["HTML", "CSS", "Javascript", "GitHub Pages"],
-    sourceCode: "https://github.com/blaycoder/Eschoolpedia-student-dashboard",
-    livePreview: "https://blaycoder.github.io/Eschoolpedia-student-dashboard",
-  },
-  {
-    id: "coloured-text",
-    name: "Coloured Text",
-    featured: false,
-    description: "Web app for generating colored text.",
-    stack: ["HTML", "CSS", "Javascript", "GitHub Pages"],
-    sourceCode: "https://github.com/blaycoder/Coloured-Text",
-    livePreview: "https://blaycoder.github.io/Coloured-Text/",
-  },
-  {
-    id: "phone-validator",
-    name: "Phone Number Validator",
-    featured: false,
-    description: "Validates phone numbers by country code and format.",
-    stack: ["HTML", "CSS", "Javascript", "GitHub Pages", "NumVerify API"],
-    sourceCode: "https://github.com/blaycoder/phone-number-validator",
-    livePreview: "https://blaycoder.github.io/phone-number-validator/",
-  },
-  {
-    id: "pizza-machine",
-    name: "Simple Pizza Machine",
-    featured: false,
-    description: "Simple web app simulating a pizza ordering process.",
-    stack: ["HTML", "CSS", "Javascript", "GitHub Pages"],
-    sourceCode: "https://github.com/blaycoder/simple-pizza-machine",
-    livePreview: "https://blaycoder.github.io/simple-pizza-machine/",
   },
 ];
 
@@ -388,7 +350,7 @@ export function buildKnowledgeChunks(): KnowledgeChunk[] {
       id: `project-${project.id}`,
       type: "project",
       title: project.name,
-      text: `Project: ${project.name}. ${project.shortDescription || project.description} Stack: ${project.stack.join(", ")}.${project.livePreview ? ` Live: ${project.livePreview}.` : ""}${project.sourceCode ? ` Code: ${project.sourceCode}.` : ""}`,
+      text: `Project: ${project.name}. ${project.shortDescription || project.description} Stack: ${project.stack.join(", ")}.${project.livePreview ? ` Live: ${project.livePreview}.` : ""}${project.sourceCode ? ` Code: ${project.sourceCode}.` : ""}${project.npmPackage ? ` npm: ${project.npmPackage}.` : ""}`,
       metadata: { type: "project", projectId: project.id, featured: String(project.featured) },
     });
   }

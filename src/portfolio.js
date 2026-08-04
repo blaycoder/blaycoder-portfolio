@@ -1,5 +1,6 @@
 import spacehqImg from "./assets/spacehq-1.webp";
 import saabisImg from "./assets/saabis-1.webp";
+import sentinelImg from "./assets/sentinel-cli-new.png";
 import {
   header,
   about,
@@ -16,6 +17,7 @@ import {
 const projectImages = {
   spacehq: spacehqImg,
   "saabis-beauty": saabisImg,
+  sentinel: sentinelImg,
 };
 
 const projects = knowledgeProjects.map((project) => ({
