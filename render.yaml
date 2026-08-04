@@ -1,0 +1,33 @@
+# Render — Mastra API (Option A alternative to Railway).
+# Create a Web Service, connect repo, Render reads this blueprint.
+
+services:
+  - type: web
+    name: portfolio-mastra-api
+    runtime: node
+    plan: free
+    buildCommand: pnpm install && pnpm mastra:build
+    startCommand: pnpm mastra:start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MASTRA_HOST
+        value: 0.0.0.0
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: MODEL
+        value: groq/openai/gpt-oss-120b
+      - key: EMBEDDING_MODEL
+        value: google/gemini-embedding-001
+      - key: MASTRA_CORS_ORIGINS
+        sync: false
+      - key: LIBSQL_STORAGE_URL
+        value: file:/data/mastra.db
+      - key: LIBSQL_VECTOR_URL
+        value: file:/data/portfolio-vector.db
+    disk:
+      name: mastra-data
+      mountPath: /data
+      sizeGB: 1

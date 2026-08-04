@@ -1,0 +1,11 @@
+# Railway — Mastra API (Option A). Create a separate Railway service from this repo.
+# Mount a volume at /data and set LIBSQL_* URLs below in Railway env vars.
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "pnpm install && pnpm mastra:build"
+
+[deploy]
+startCommand = "pnpm mastra:start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
