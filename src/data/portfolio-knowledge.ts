@@ -40,7 +40,7 @@ export const about = {
   description:
     "Frontend engineer and Altschool Africa alumnus. I build responsive web products, contribute to open source, and create technical content on Medium and YouTube.",
   resume:
-    "https://drive.google.com/file/d/1iR8FQ2BpddE_5RmnzwHeCWixzKlHiyth/view?usp=sharing",
+    "https://drive.google.com/file/d/1wgB_wQ3JZm3Z2AGMRVkunTXfw43Hbgla/view?usp=sharing",
   social: {
     linkedin: "https://www.linkedin.com/in/ayomide-onatola-3180281a5/",
     github: "https://github.com/blaycoder",
