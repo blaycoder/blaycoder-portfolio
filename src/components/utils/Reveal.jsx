@@ -6,7 +6,7 @@ const prefersReducedMotion = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-export const Reveal = ({ children, width = "fit-content" }) => {
+export const Reveal = ({ children, width = "fit-content", wipe = true }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -44,7 +44,7 @@ export const Reveal = ({ children, width = "fit-content" }) => {
       >
         {children}
       </motion.div>
-      {!reduced && (
+      {!reduced && wipe && (
         <motion.div
           variants={slideVariants}
           initial="hidden"
@@ -68,8 +68,10 @@ export const Reveal = ({ children, width = "fit-content" }) => {
 Reveal.propTypes = {
   children: PropTypes.node.isRequired,
   width: PropTypes.string,
+  wipe: PropTypes.bool,
 };
 
 Reveal.defaultProps = {
   width: "fit-content",
+  wipe: true,
 };

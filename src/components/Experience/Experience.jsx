@@ -1,49 +1,25 @@
-import uniqid from "uniqid";
 import { experience } from "../../portfolio";
-import { Reveal } from "../utils/Reveal";
-import "./Experience.css";
+import SectionShell from "../brutal/SectionShell";
+import ExperienceItem from "./ExperienceItem";
 
 const Experience = () => {
   if (!experience?.length) return null;
 
   return (
-    <section id="experience" className="section experience">
-      <h2 className="section__title">Experience</h2>
-      <div className="experience__list">
-        {experience.map((job) => (
-          <Reveal key={uniqid()} width="100%">
-            <article className="experience__card">
-              <header className="experience__header">
-                <h3 className="experience__role">{job.role}</h3>
-                <p className="experience__meta">
-                  <span className="experience__company">{job.company}</span>
-                  <span className="experience__location">{job.location}</span>
-                </p>
-                <p className="experience__period">{job.period}</p>
-              </header>
-              {job.highlights?.length > 0 && (
-                <ul className="experience__highlights">
-                  {job.highlights.map((item) => (
-                    <li key={uniqid()} className="experience__highlight">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {job.tech?.length > 0 && (
-                <div className="experience__tech">
-                  {job.tech.map((t) => (
-                    <span key={uniqid()} className="experience__tech-tag">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </article>
-          </Reveal>
+    <SectionShell id="experience" bgClass="bg-brutal-green">
+      <h2 className="mb-8 text-left text-3xl font-extrabold text-black md:mb-12 md:text-4xl">
+        Experience
+      </h2>
+      <div>
+        {experience.map((job, index) => (
+          <ExperienceItem
+            key={`${job.company}-${job.period}`}
+            job={job}
+            questNumber={index + 1}
+          />
         ))}
       </div>
-    </section>
+    </SectionShell>
   );
 };
 

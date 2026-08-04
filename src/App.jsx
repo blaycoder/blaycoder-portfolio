@@ -1,38 +1,34 @@
-import { useContext } from "react";
-import { ThemeContext } from "./contexts/theme";
 import Header from "./components/Header/Header";
-import About from "./components/About/About";
+import Hero from "./components/Hero/Hero";
 import Experience from "./components/Experience/Experience";
+import FeaturedProjects from "./components/FeaturedProjects/FeaturedProjects";
+import MoreProjects from "./components/MoreProjects/MoreProjects";
+import FAQ from "./components/FAQ/FAQ";
+import ClosingCTA from "./components/ClosingCTA/ClosingCTA";
 import ExitIntentModal from "./components/ExitIntentModal/ExitIntentModal";
-import Projects from "./components/Projects/Projects";
-import Skills from "./components/Skills/Skills";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import AskAyomide from "./components/Companion/AskAyomide";
 import "./App.css";
-import PortfolioChat from "./components/ChatWidget/PortfolioChat";
 
-const App = () => {
-  const { themeName } = useContext(ThemeContext);
-
-  return (
-    <div id="top" className={`${themeName} app`}>
-      <div className="app__wrap">
-        <Header />
-        <main>
-          <About />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Contact />
-        </main>
-        <PortfolioChat/>
-        <Footer />
-      </div>
-      <ScrollToTop />
-      <ExitIntentModal />
+const App = () => (
+  <div id="top" className="app">
+    <Header />
+    <main className="w-full">
+      <Hero />
+      <Experience />
+      <FeaturedProjects />
+      <MoreProjects />
+      <FAQ />
+      <ClosingCTA />
+    </main>
+    <div className="app__wrap">
+      <Footer />
     </div>
-  );
-};
+    <AskAyomide />
+    <ScrollToTop />
+    <ExitIntentModal />
+  </div>
+);
 
 export default App;
