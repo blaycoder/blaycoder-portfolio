@@ -7,8 +7,7 @@ const compactChipClass =
   "border-[1.5px] px-2 py-0.5 text-[0.65rem] leading-tight";
 
 const ProjectCardCompact = ({ project }) => {
-  const visibleStack = project.stack?.slice(0, 3) ?? [];
-  const extraCount = (project.stack?.length ?? 0) - visibleStack.length;
+  const stack = project.stack ?? [];
   const blurb = project.shortDescription || project.description;
 
   return (
@@ -25,18 +24,13 @@ const ProjectCardCompact = ({ project }) => {
 
       <ProjectLinks project={project} />
 
-      {visibleStack.length > 0 && (
+      {stack.length > 0 && (
         <div className="mt-auto flex flex-wrap gap-1 pt-1">
-          {visibleStack.map((item, i) => (
+          {stack.map((item, i) => (
             <TagChip key={item} index={i} className={compactChipClass}>
               {item}
             </TagChip>
           ))}
-          {extraCount > 0 && (
-            <span className="inline-flex items-center rounded-full border-[1.5px] border-black bg-white px-1.5 py-0.5 text-[0.6rem] font-bold">
-              +{extraCount}
-            </span>
-          )}
         </div>
       )}
     </BrutalCard>
