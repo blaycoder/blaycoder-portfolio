@@ -1,46 +1,57 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { about, contact } from "../../portfolio";
-import "./ExitIntentModal.css";
+import BrutalButton from "../brutal/BrutalButton";
+import BrutalCard from "../brutal/BrutalCard";
 
 const STORAGE_KEY = "exitIntentShown";
 const DESKTOP_MIN_WIDTH = 1024;
-const EXIT_INTENT_TOP_THRESHOLD = 15; // px from top - cursor moving to address bar/back
+const EXIT_INTENT_TOP_THRESHOLD = 15;
 
 const ExitIntentModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const switchedAwayRef = useRef(false);
 
   const isDesktop = () => {
     if (typeof window === "undefined") return false;
     return window.matchMedia(`(min-width: ${DESKTOP_MIN_WIDTH}px)`).matches;
   };
 
-  const tryShow = useCallback(() => {
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-    setIsOpen(true);
+  const hasShown = () => {
     try {
-      sessionStorage.setItem(STORAGE_KEY, "true");
+      return sessionStorage.getItem(STORAGE_KEY) === "true";
     } catch {
-      // sessionStorage may be unavailable (private mode, etc.)
+      return false;
     }
-  }, []);
+  };
 
-  const handleClose = useCallback(() => {
-    setIsOpen(false);
+  const markShown = () => {
     try {
       sessionStorage.setItem(STORAGE_KEY, "true");
     } catch {
       // sessionStorage may be unavailable
     }
+  };
+
+  const tryShow = useCallback(() => {
+    if (hasShown()) return;
+    setIsOpen(true);
+    markShown();
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+    markShown();
   }, []);
 
   const handleMouseLeave = useCallback(
     (e) => {
-      if (!isDesktop()) return;
-      if (sessionStorage.getItem(STORAGE_KEY)) return;
+      if (!isDesktop() || hasShown()) return;
+      if (e.clientY > EXIT_INTENT_TOP_THRESHOLD) return;
+
       const relatedTarget = e.relatedTarget;
       if (
         relatedTarget === null ||
@@ -52,29 +63,38 @@ const ExitIntentModal = () => {
     [tryShow],
   );
 
-  const handleMouseMove = useCallback(
-    (e) => {
-      if (!isDesktop()) return;
-      if (sessionStorage.getItem(STORAGE_KEY)) return;
-      if (e.clientY <= EXIT_INTENT_TOP_THRESHOLD) {
-        tryShow();
-      }
-    },
-    [tryShow],
-  );
-
   useEffect(() => {
     if (!isDesktop()) return;
+
     const doc = document.documentElement;
     doc.addEventListener("mouseleave", handleMouseLeave);
     doc.addEventListener("mouseout", handleMouseLeave);
-    document.addEventListener("mousemove", handleMouseMove, { passive: true });
+
     return () => {
       doc.removeEventListener("mouseleave", handleMouseLeave);
       doc.removeEventListener("mouseout", handleMouseLeave);
-      document.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [handleMouseLeave, handleMouseMove]);
+  }, [handleMouseLeave]);
+
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (hasShown()) return;
+
+      if (document.hidden) {
+        switchedAwayRef.current = true;
+        return;
+      }
+
+      if (switchedAwayRef.current) {
+        switchedAwayRef.current = false;
+        tryShow();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibility);
+  }, [tryShow]);
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -94,63 +114,70 @@ const ExitIntentModal = () => {
 
   return (
     <div
-      className="exit-intent-overlay"
+      className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60 p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="exit-intent-title"
       onClick={(e) => e.target === e.currentTarget && handleClose()}
     >
-      <div className="exit-intent-modal">
+      <BrutalCard className="relative w-full max-w-md">
         <button
           type="button"
-          className="exit-intent-close"
+          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border-[3px] border-black bg-white text-black shadow-[2px_2px_0_#000] transition-[transform,box-shadow] duration-100 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-black"
           onClick={handleClose}
           aria-label="Close modal"
         >
-          <CloseIcon />
+          <CloseIcon fontSize="small" />
         </button>
-        <h2 id="exit-intent-title" className="exit-intent-title">
+
+        <h2
+          id="exit-intent-title"
+          className="pr-10 text-xl font-extrabold text-black sm:text-2xl"
+        >
           Before you go—let&apos;s connect?
         </h2>
-        <p className="exit-intent-message">
+        <p className="mt-3 text-sm leading-relaxed text-black/90 sm:text-base">
           I&apos;d love to hear from you. Reach out via email or connect on
           LinkedIn or GitHub.
         </p>
-        <div className="exit-intent-links">
+
+        <div className="mt-6 flex flex-wrap gap-3">
           {email && (
-            <a
+            <BrutalButton
               href={`mailto:${email}`}
-              className="exit-intent-link"
-              rel="noopener noreferrer"
+              variant="primary"
+              className="gap-2"
             >
               <EmailIcon fontSize="small" />
               Email
-            </a>
+            </BrutalButton>
           )}
           {github && (
-            <a
+            <BrutalButton
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="exit-intent-link"
+              variant="accent"
+              className="gap-2"
             >
               <GitHubIcon fontSize="small" />
               GitHub
-            </a>
+            </BrutalButton>
           )}
           {linkedin && (
-            <a
+            <BrutalButton
               href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="exit-intent-link"
+              variant="default"
+              className="gap-2"
             >
               <LinkedInIcon fontSize="small" />
               LinkedIn
-            </a>
+            </BrutalButton>
           )}
         </div>
-      </div>
+      </BrutalCard>
     </div>
   );
 };

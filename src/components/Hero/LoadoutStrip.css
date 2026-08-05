@@ -1,0 +1,53 @@
+.loadout-marquee {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.loadout-track {
+  animation: loadout-scroll 24s linear infinite;
+  width: max-content;
+}
+
+.loadout-marquee:hover .loadout-track,
+.loadout-marquee:focus-within .loadout-track {
+  animation-play-state: paused;
+}
+
+@keyframes loadout-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loadout-track {
+    animation: none;
+  }
+
+  .loadout-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .loadout-marquee::-webkit-scrollbar {
+    display: none;
+  }
+}
