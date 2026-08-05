@@ -77,10 +77,18 @@ const MemoryMatchGame = () => {
 
   if (!started) {
     return (
-      <BrutalCard className="flex flex-col items-center justify-center gap-4 text-center">
-        <p className="text-sm font-bold uppercase tracking-wide">Mini-game</p>
-        <p className="text-base font-semibold">Match the stack pairs!</p>
-        <BrutalButton variant="primary" onClick={() => setStarted(true)}>
+      <BrutalCard className="flex flex-col items-center justify-center gap-3 p-4 text-center sm:gap-4 sm:p-5 md:p-6">
+        <p className="text-xs font-bold uppercase tracking-wide sm:text-sm">
+          Mini-game
+        </p>
+        <p className="text-sm font-semibold sm:text-base">
+          Match the stack pairs!
+        </p>
+        <BrutalButton
+          variant="primary"
+          onClick={() => setStarted(true)}
+          className="w-full sm:w-auto"
+        >
           Press Start
         </BrutalButton>
       </BrutalCard>
@@ -88,13 +96,15 @@ const MemoryMatchGame = () => {
   }
 
   return (
-    <BrutalCard className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <p className="text-sm font-bold uppercase tracking-wide">Memory Match</p>
+    <BrutalCard className="flex flex-col gap-3 p-4 sm:gap-4 sm:p-5 md:p-6">
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <p className="text-xs font-bold uppercase tracking-wide sm:text-sm">
+          Memory Match
+        </p>
         <p className="text-xs font-semibold">Moves: {moves}</p>
       </div>
 
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-2">
         {deck.map((card) => {
           const isFlipped =
             flipped.includes(card.uid) || matched.includes(card.id);
@@ -104,10 +114,10 @@ const MemoryMatchGame = () => {
               type="button"
               onClick={() => handleFlip(card.uid)}
               aria-label={isFlipped ? card.name : "Hidden card"}
-              className={`flex aspect-square items-center justify-center rounded-xl border-[3px] border-black text-lg font-bold transition-transform duration-200 ${
+              className={`flex aspect-square min-h-11 min-w-11 touch-manipulation select-none items-center justify-center rounded-lg border-2 border-black text-base font-bold transition-transform duration-200 sm:rounded-xl sm:border-[3px] sm:text-lg sm:hover:-translate-y-0.5 ${
                 isFlipped
                   ? "bg-brutal-yellow shadow-[2px_2px_0_#000]"
-                  : "bg-white shadow-[3px_3px_0_#000] hover:-translate-y-0.5"
+                  : "bg-white shadow-[2px_2px_0_#000] sm:shadow-[3px_3px_0_#000]"
               }`}
             >
               {isFlipped ? card.label : "?"}
@@ -117,7 +127,7 @@ const MemoryMatchGame = () => {
       </div>
 
       {won && (
-        <p className="text-center text-sm font-bold text-black">
+        <p className="text-center text-xs font-bold text-black sm:text-sm">
           All matched! Nice work.
         </p>
       )}

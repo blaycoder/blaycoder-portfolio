@@ -29,3 +29,8 @@ dist-ssr
 .cursor/*
 .env.example
 .mastra/
+
+# Mastra local SQLite (regenerated on dev start / ingest)
+src/mastra/public/*.db
+src/mastra/public/*.db-shm
+src/mastra/public/*.db-wal
