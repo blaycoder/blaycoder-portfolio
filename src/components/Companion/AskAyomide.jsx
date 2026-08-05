@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useMemo, useState } from "react";
 import { DefaultChatTransport } from "ai";
 import { useChat } from "@ai-sdk/react";
@@ -10,8 +11,7 @@ const MASTRA_API =
 const JOB_MATCH_PLACEHOLDER =
   "Paste a job description here and I'll match Ayomide's best projects…";
 
-const AskAyomide = () => {
-  const [open, setOpen] = useState(false);
+const AskAyomide = ({ open, onOpenChange }) => {
   const [input, setInput] = useState("");
   const [placeholder, setPlaceholder] = useState("Ask about Ayomide's work…");
 
@@ -37,7 +37,7 @@ const AskAyomide = () => {
   const handleChipSelect = (label) => {
     if (label === "Match me to a job") {
       setPlaceholder(JOB_MATCH_PLACEHOLDER);
-      setOpen(true);
+      onOpenChange(true);
       return;
     }
     handleSend(label);
@@ -49,7 +49,10 @@ const AskAyomide = () => {
 
   return (
     <>
-      <CompanionFab open={open} onClick={() => setOpen((value) => !value)} />
+      <CompanionFab
+        open={open}
+        onClick={() => onOpenChange(!open)}
+      />
       <CompanionPanel
         open={open}
         messages={messages}
@@ -60,11 +63,16 @@ const AskAyomide = () => {
         onSend={handleSend}
         onChipSelect={handleChipSelect}
         onRetry={handleRetry}
-        onClose={() => setOpen(false)}
+        onClose={() => onOpenChange(false)}
         placeholder={placeholder}
       />
     </>
   );
+};
+
+AskAyomide.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onOpenChange: PropTypes.func.isRequired,
 };
 
 export default AskAyomide;

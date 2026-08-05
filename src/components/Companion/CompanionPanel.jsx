@@ -54,12 +54,20 @@ const CompanionPanel = ({
           >
             <header className="mb-3 flex items-center gap-3 border-b-[3px] border-black pb-3">
               <CompanionAvatar />
-              <div>
+              <div className="min-w-0 flex-1">
                 <h2 className="text-base font-black uppercase">Ask Ayo</h2>
                 <p className="text-xs font-bold text-black/70">
                   Portfolio guide · grounded answers only
                 </p>
               </div>
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close companion"
+                className="flex size-10 shrink-0 items-center justify-center rounded-full border-[3px] border-black bg-white text-lg font-black leading-none shadow-[2px_2px_0_#000] transition-[transform,box-shadow] duration-100 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 md:hidden"
+              >
+                ✕
+              </button>
             </header>
 
             <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto pr-1">

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Experience from "./components/Experience/Experience";
@@ -11,24 +12,28 @@ import Footer from "./components/Footer/Footer";
 import AskAyomide from "./components/Companion/AskAyomide";
 import "./App.css";
 
-const App = () => (
-  <div id="top" className="app">
-    <Header />
-    <main className="w-full">
-      <Hero />
-      <Experience />
-      <FeaturedProjects />
-      <MoreProjects />
-      <FAQ />
-      <ClosingCTA />
-    </main>
-    <div className="app__wrap">
-      <Footer />
+const App = () => {
+  const [companionOpen, setCompanionOpen] = useState(false);
+
+  return (
+    <div id="top" className="app">
+      <Header />
+      <main className="w-full">
+        <Hero />
+        <Experience />
+        <FeaturedProjects />
+        <MoreProjects />
+        <FAQ />
+        <ClosingCTA />
+      </main>
+      <div className="app__wrap">
+        <Footer />
+      </div>
+      <AskAyomide open={companionOpen} onOpenChange={setCompanionOpen} />
+      <ScrollToTop companionOpen={companionOpen} />
+      <ExitIntentModal />
     </div>
-    <AskAyomide />
-    <ScrollToTop />
-    <ExitIntentModal />
-  </div>
-);
+  );
+};
 
 export default App;
