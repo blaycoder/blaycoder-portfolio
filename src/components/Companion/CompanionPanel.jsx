@@ -45,7 +45,7 @@ const CompanionPanel = ({
           />
           <motion.section
             role="dialog"
-            aria-label="Ask Ayomide companion"
+            aria-label="Ask Ayo companion"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
@@ -55,7 +55,7 @@ const CompanionPanel = ({
             <header className="mb-3 flex items-center gap-3 border-b-[3px] border-black pb-3">
               <CompanionAvatar />
               <div>
-                <h2 className="text-base font-black uppercase">Ask Ayomide</h2>
+                <h2 className="text-base font-black uppercase">Ask Ayo</h2>
                 <p className="text-xs font-bold text-black/70">
                   Portfolio guide · grounded answers only
                 </p>

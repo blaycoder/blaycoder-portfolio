@@ -4,9 +4,6 @@ import TagChip from "../brutal/TagChip";
 
 const LoadoutStrip = ({ items = loadout }) => (
   <div className="mt-6 min-w-0 sm:mt-8">
-    <p className="mb-2 text-[0.65rem] font-bold uppercase tracking-widest text-black/70 sm:mb-3 sm:text-xs">
-      Loadout — Equipped
-    </p>
     <div className="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {items.map((skill, i) => (
         <div

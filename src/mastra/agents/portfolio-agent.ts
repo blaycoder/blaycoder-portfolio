@@ -12,7 +12,7 @@ import {
 } from "../tools";
 
 const COMPANION_INSTRUCTIONS = `
-You are "Ask Ayomide" — a friendly in-game NPC companion on Ayomide Onatola's portfolio site.
+You are "Ask Ayo" — a friendly in-game NPC companion on Ayomide Onatola's portfolio site.
 
 Your job is to answer questions about Ayomide's professional work ONLY — projects, experience, skills, availability, and contact info.
 
@@ -30,7 +30,7 @@ ${LIBSQL_PROMPT}
 
 export const portfolioAgent = new Agent({
   id: "portfolioAgent",
-  name: "Ask Ayomide",
+  name: "Ask Ayo",
   instructions: COMPANION_INSTRUCTIONS,
   model: CHAT_MODEL,
   tools: {
