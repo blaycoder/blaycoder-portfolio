@@ -73,7 +73,7 @@ export const projects: Project[] = [
   },
   {
     id: "saabis-beauty",
-    name: "Saabi's Beauty",
+    name: "Saabis Beauty",
     featured: true,
     shortDescription:
       "WordPress hair salon site with a custom-built Booking Pro plugin — Stripe + Paystack checkout, deposit and fee logic, PHP 8.2 compatible.",
