@@ -95,6 +95,18 @@ export const projects: Project[] = [
     npmPackage: "https://www.npmjs.com/package/@sentinel-scan/core",
   },
   {
+    id: "scamdetect",
+    name: "ScamDetect",
+    featured: true,
+    shortDescription:
+      "Multilingual AI-powered scam and phishing detector for SMS, email, WhatsApp, and URLs — real-time SAFE/SUSPICIOUS/PHISHING classification with threat intelligence and screenshot OCR.",
+    description:
+      "Built ScamDetect, a free multilingual platform that analyzes suspicious messages and URLs for phishing and scam indicators. Features Llama3-powered AI classification, VirusTotal and PhishTank URL checks, screenshot OCR text extraction, indigenous-language UI translation via Lingo.dev, and optional user dashboards for scan history.",
+    stack: ["Next.js", "Supabase", "TypeScript", "Ollama", "VirusTotal API", "Lingo.dev"],
+    livePreview: "https://www.scamdetect.run/",
+    sourceCode: "https://github.com/blaycoder/ScamDetect-Multilingual",
+  },
+  {
     id: "aki-solutions",
     name: "AKI Solutions Website (UK & Nigeria)",
     featured: false,
