@@ -38,7 +38,7 @@ export const about = {
   name: "Ayomide",
   role: "Front End Engineer",
   description:
-    "Frontend engineer and Altschool Africa alumnus. I build responsive web products, contribute to open source, and create technical content on Medium and YouTube.",
+    "Frontend engineer and Altschool Africa alumnus. I help businesses fix and build web products that generate/retain revenue, contribute to open source, and create technical content on Medium and YouTube.",
   resume:
     "https://drive.google.com/file/d/1wgB_wQ3JZm3Z2AGMRVkunTXfw43Hbgla/view?usp=sharing",
   social: {
