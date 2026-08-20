@@ -13,6 +13,7 @@ export type Project = {
   links?: ProjectLink[];
   credit?: string;
   image?: string;
+  caseStudy?: string;
 };
 
 export type Experience = {
@@ -111,14 +112,36 @@ export const projects: Project[] = [
     name: "AKI Solutions Website (UK & Nigeria)",
     featured: false,
     shortDescription:
-      "Revamped corporate sites for UK and Nigeria — migrated legacy stack to React.js, Bootstrap, and Framer Motion.",
+      "Contributed to the corporate website redesign & digital transformation for UK and Nigeria — migrated the legacy stack to React.js, Bootstrap, and Framer Motion.",
     description:
-      "Revamped the entire website to improve visual appeal and attract prospective clients. Migrated the tech stack from HTML, CSS, JavaScript, and PHP to React.js, Bootstrap, and Framer Motion.",
+      "Contributed to the redesign and modernization of the AKI Solutions corporate website, improving visual presentation, service communication and project storytelling. Migrated the tech stack from HTML, CSS, JavaScript, and PHP to React.js, Bootstrap, and Framer Motion.",
+    credit: "Professional work completed at AKI Solutions Ltd.",
     stack: ["React.js", "Bootstrap", "Framer Motion", "PHP"],
     links: [
       { label: "UK", url: "https://akisolutions.co.uk" },
       { label: "Nigeria", url: "https://akisolutions.com.ng" },
     ],
+    caseStudy: "/case-studies/aki-solutions",
+  },
+  {
+    id: "eschool-ng",
+    name: "eSchool.ng — School Management Platform",
+    featured: false,
+    shortDescription:
+      "Contributed to the redesign and UX of a customizable school management platform, plus backend work on the demo request flow.",
+    description:
+      "Contributed to the development and improvement of eSchool.ng, a customizable school management platform covering student and staff management, attendance, results, fees and accounting, inventory, communication, live learning and AI-assisted lesson notes. Redesigned the website across its major pages, improved visual hierarchy and UI, and worked on the backend for the demo request form.",
+    credit: "Professional work completed at AKI Solutions Ltd.",
+    stack: [
+      "Frontend Development",
+      "UI/UX",
+      "Responsive Design",
+      "Backend/API Integration",
+      "Accessibility",
+      "SEO",
+    ],
+    livePreview: "https://eschool-ng.com",
+    caseStudy: "/case-studies/eschool-ng",
   },
   {
     id: "charity-management",
@@ -362,7 +385,7 @@ export function buildKnowledgeChunks(): KnowledgeChunk[] {
       id: `project-${project.id}`,
       type: "project",
       title: project.name,
-      text: `Project: ${project.name}. ${project.shortDescription || project.description} Stack: ${project.stack.join(", ")}.${project.livePreview ? ` Live: ${project.livePreview}.` : ""}${project.sourceCode ? ` Code: ${project.sourceCode}.` : ""}${project.npmPackage ? ` npm: ${project.npmPackage}.` : ""}`,
+      text: `Project: ${project.name}. ${project.shortDescription || project.description} Stack: ${project.stack.join(", ")}.${project.credit ? ` ${project.credit}.` : ""}${project.livePreview ? ` Live: ${project.livePreview}.` : ""}${project.sourceCode ? ` Code: ${project.sourceCode}.` : ""}${project.npmPackage ? ` npm: ${project.npmPackage}.` : ""}${project.caseStudy ? ` Case study: ${project.caseStudy}.` : ""}`,
       metadata: { type: "project", projectId: project.id, featured: String(project.featured) },
     });
   }

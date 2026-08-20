@@ -3,6 +3,10 @@
     {
       "source": "/portfolio(.*)",
       "destination": "/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }

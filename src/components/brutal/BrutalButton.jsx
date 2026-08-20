@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const BrutalButton = ({
@@ -6,6 +7,7 @@ const BrutalButton = ({
   className,
   variant = "default",
   href,
+  to,
   ...props
 }) => {
   const base =
@@ -19,6 +21,14 @@ const BrutalButton = ({
   };
 
   const classes = cn(base, variants[variant], className);
+
+  if (to) {
+    return (
+      <Link to={to} className={classes} {...props}>
+        {children}
+      </Link>
+    );
+  }
 
   if (href) {
     return (
@@ -40,6 +50,7 @@ BrutalButton.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(["default", "primary", "accent", "danger"]),
   href: PropTypes.string,
+  to: PropTypes.string,
 };
 
 export default BrutalButton;
