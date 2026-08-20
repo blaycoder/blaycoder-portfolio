@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
+import { FileText } from "lucide-react";
 import BrutalCard from "../brutal/BrutalCard";
+import BrutalButton from "../brutal/BrutalButton";
 import TagChip from "../brutal/TagChip";
 import { ProjectLinks } from "../brutal/ProjectLinkButton";
 
@@ -16,13 +18,30 @@ const ProjectCardCompact = ({ project }) => {
         {project.name}
       </h3>
 
+      {project.credit && (
+        <p className="text-left text-[0.65rem] font-bold uppercase tracking-wide text-black/50">
+          {project.credit}
+        </p>
+      )}
+
       {blurb && (
         <p className="text-left text-xs leading-relaxed text-black/75">
           {blurb}
         </p>
       )}
 
-      <ProjectLinks project={project} />
+      <div className="flex flex-wrap items-center gap-2">
+        <ProjectLinks project={project} />
+        {project.caseStudy && (
+          <BrutalButton
+            to={project.caseStudy}
+            variant="primary"
+            className="min-h-9 px-3 py-1.5 text-xs"
+          >
+            <FileText size={14} className="mr-1.5" /> Case study
+          </BrutalButton>
+        )}
+      </div>
 
       {stack.length > 0 && (
         <div className="mt-auto flex flex-wrap gap-1 pt-1">
@@ -42,10 +61,12 @@ ProjectCardCompact.propTypes = {
     name: PropTypes.string.isRequired,
     shortDescription: PropTypes.string,
     description: PropTypes.string,
+    credit: PropTypes.string,
     stack: PropTypes.arrayOf(PropTypes.string),
     sourceCode: PropTypes.string,
     livePreview: PropTypes.string,
     npmPackage: PropTypes.string,
+    caseStudy: PropTypes.string,
     links: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.string.isRequired,

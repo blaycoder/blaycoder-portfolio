@@ -34,3 +34,7 @@ dist-ssr
 src/mastra/public/*.db
 src/mastra/public/*.db-shm
 src/mastra/public/*.db-wal
+
+# Raw case-study source material (docx + unedited screenshot dump).
+# Curated copies used by the app live in public/case-studies/.
+/assets/
