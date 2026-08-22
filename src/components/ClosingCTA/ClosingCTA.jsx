@@ -19,7 +19,7 @@ const ClosingCTA = () => {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           {contact.email && (
             <BrutalButton href={`mailto:${contact.email}`} variant="default">
-              Continue
+              {"Let's Work Together"}
             </BrutalButton>
           )}
           {about.resume && (

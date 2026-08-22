@@ -30,13 +30,20 @@ const Hero = () => {
               {description}
             </p>
           )}
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <BrutalButton
               href="#work"
               variant="primary"
               className="w-full sm:w-auto"
             >
-              See my work
+              View My Work
+            </BrutalButton>
+            <BrutalButton
+              href="#contact"
+              variant="default"
+              className="w-full sm:w-auto"
+            >
+              {"Let's Work Together"}
             </BrutalButton>
           </div>
           <LoadoutStrip />

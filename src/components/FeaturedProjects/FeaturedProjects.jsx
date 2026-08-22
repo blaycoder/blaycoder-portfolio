@@ -11,8 +11,8 @@ const FeaturedProjects = () => {
         Featured Projects
       </h2>
       <div className="flex flex-col gap-10 md:gap-14">
-        {featuredProjects.map((project) => (
-          <FeaturedProjectCard key={project.name} project={project} />
+        {featuredProjects.map((project, index) => (
+          <FeaturedProjectCard key={project.name} project={project} index={index} />
         ))}
       </div>
     </SectionShell>

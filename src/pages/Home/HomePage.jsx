@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
+import Credibility from "../../components/Credibility/Credibility";
 import Experience from "../../components/Experience/Experience";
 import FeaturedProjects from "../../components/FeaturedProjects/FeaturedProjects";
+import WhatIDo from "../../components/WhatIDo/WhatIDo";
 import MoreProjects from "../../components/MoreProjects/MoreProjects";
+import About from "../../components/About/About";
 import FAQ from "../../components/FAQ/FAQ";
 import ClosingCTA from "../../components/ClosingCTA/ClosingCTA";
 import ExitIntentModal from "../../components/ExitIntentModal/ExitIntentModal";
@@ -15,7 +18,8 @@ const HomePage = () => {
   const [companionOpen, setCompanionOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Blaycoder-Portfolio";
+    document.title =
+      "Ayomide — Frontend Engineer building products that solve real problems";
   }, []);
 
   return (
@@ -23,9 +27,12 @@ const HomePage = () => {
       <Header />
       <main className="w-full">
         <Hero />
-        <Experience />
+        <Credibility />
         <FeaturedProjects />
+        <WhatIDo />
+        <Experience />
         <MoreProjects />
+        <About />
         <FAQ />
         <ClosingCTA />
       </main>
