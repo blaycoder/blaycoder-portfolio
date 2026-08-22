@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { featuredProjects, moreProjects, experience, faq, contact } from "../../portfolio";
+import { featuredProjects, aboutSection, capabilities, contact } from "../../portfolio";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -10,6 +10,12 @@ const Navbar = () => {
   return (
     <nav className="center nav">
       <ul className={`nav__list${showNavList ? " is-open" : ""}`}>
+        <li className="nav__list-item">
+          <a href="#top" onClick={toggleNavList} className="link link--nav">
+            Home
+          </a>
+        </li>
+
         {featuredProjects.length ? (
           <li className="nav__list-item">
             <a href="#work" onClick={toggleNavList} className="link link--nav">
@@ -18,34 +24,26 @@ const Navbar = () => {
           </li>
         ) : null}
 
-        {experience?.length ? (
+        {aboutSection?.paragraphs?.length ? (
           <li className="nav__list-item">
             <a
-              href="#experience"
+              href="#about"
               onClick={toggleNavList}
               className="link link--nav"
             >
-              Experience
+              About
             </a>
           </li>
         ) : null}
 
-        {moreProjects.length ? (
+        {capabilities?.length ? (
           <li className="nav__list-item">
             <a
-              href="#more-projects"
+              href="#what-i-do"
               onClick={toggleNavList}
               className="link link--nav"
             >
-              Projects
-            </a>
-          </li>
-        ) : null}
-
-        {faq?.length ? (
-          <li className="nav__list-item">
-            <a href="#faq" onClick={toggleNavList} className="link link--nav">
-              FAQ
+              Capabilities
             </a>
           </li>
         ) : null}

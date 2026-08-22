@@ -37,9 +37,9 @@ export const header = {
 
 export const about = {
   name: "Ayomide",
-  role: "Front End Engineer",
+  role: "Frontend Engineer building products that solve real problems",
   description:
-    "Frontend engineer and Altschool Africa alumnus. I help businesses fix and build web products that generate/retain revenue, contribute to open source, and create technical content on Medium and YouTube.",
+    "I design and build fast, accessible web applications with React and Next.js — turning complex requirements into interfaces that are performant, usable, and engineered to last.",
   resume:
     "https://drive.google.com/file/d/1wgB_wQ3JZm3Z2AGMRVkunTXfw43Hbgla/view?usp=sharing",
   social: {
@@ -51,87 +51,66 @@ export const about = {
 };
 
 export const loadout = [
-  "Git",
-  "GitHub",
   "React",
   "Next.js",
+  "JavaScript",
   "TypeScript",
-  "Tailwind CSS",
-  "Framer Motion",
+  "Vue.js",
+  "API Integration",
+  "Accessibility",
+  "Web Security",
 ];
+
+export const positioning =
+  "I build scalable, user-focused web applications and digital experiences that solve real business problems.";
+
+export const credibility = {
+  headline: "I build software that solves real problems.",
+  subtext:
+    "From school management platforms and business websites to developer tools and AI-powered security apps, I focus on shipping products that work, scale, and hold up in production.",
+};
+
+export const capabilities = [
+  {
+    title: "Frontend Engineering",
+    description:
+      "Building responsive, accessible interfaces with React, Next.js, TypeScript, and Vue.js — from component architecture through to production deployment.",
+  },
+  {
+    title: "Product Development",
+    description:
+      "Turning requirements into working products: user flows, API integration, dashboards, and features that ship and hold up under real usage.",
+  },
+  {
+    title: "Performance & UX",
+    description:
+      "Optimizing load times, interactions, and usability so products feel fast and are easy to use — not just designed to look good.",
+  },
+  {
+    title: "Security & AI",
+    description:
+      "Applying secure coding practices across payment and auth flows, and building AI-powered features like automated threat and scam detection.",
+  },
+];
+
+export const aboutSection = {
+  heading: "About",
+  paragraphs: [
+    "I'm a Frontend Engineer and AltSchool Africa alumnus who builds real-world products, not just interfaces. My work spans business websites, school management platforms, developer tooling, and AI-powered security applications.",
+    "I care about understanding the problem before reaching for a framework, writing code that's maintainable, and shipping interfaces that are fast, accessible, and easy to use. Outside client and product work, I contribute to open source and write technical content on Medium and YouTube.",
+  ],
+};
 
 export const projects: Project[] = [
   {
-    id: "spacehq",
-    name: "SpaceHQ",
-    featured: true,
-    shortDescription:
-      "Production React.js SaaS for a UK co-working and virtual address provider — signup and plan-selection flows with Stripe Checkout, customer and admin dashboards, subscription management.",
-    description:
-      "Built a production React.js SaaS platform for SpaceHQ Ltd, a UK co-working and virtual address provider. Implemented signup and plan-selection flows with Stripe Checkout, customer and admin dashboards, and subscription management using TanStack Query, Zustand, Stripe, and Framer Motion. Applied security patterns including safeUser whitelisting and idempotency keys on payment flows.",
-    stack: ["React.js", "TanStack Query", "Zustand", "Stripe", "Framer Motion"],
-    livePreview: "https://spacehqltd.com/",
-  },
-  {
-    id: "saabis-beauty",
-    name: "Saabis Beauty",
-    featured: true,
-    shortDescription:
-      "WordPress hair salon site with a custom-built Booking Pro plugin — Stripe + Paystack checkout, deposit and fee logic, PHP 8.2 compatible.",
-    description:
-      "Developed saabisbeauty.co.uk, a WordPress hair salon website featuring a custom-built Booking Pro plugin with Stripe and Paystack checkout, deposit and fee logic, built on PHP 8.2.",
-    stack: ["WordPress", "PHP 8.2", "Stripe", "Paystack"],
-    livePreview: "https://saabisbeauty.co.uk",
-  },
-  {
-    id: "sentinel",
-    name: "Sentinel",
-    featured: true,
-    shortDescription:
-      "Open-source static analysis CLI that catches API contract mismatches before deployment — MIT licensed, zero/minimal runtime deps, npm workspaces monorepo.",
-    description:
-      "Created Sentinel, an open-source static analysis CLI that catches API contract mismatches before deployment. MIT licensed with zero/minimal runtime dependencies, published as @sentinel-scan/core and built as an npm workspaces monorepo.",
-    stack: ["Node.js", "TypeScript", "CLI", "npm workspaces"],
-    sourceCode: "https://github.com/blaycoder/sentinel",
-    npmPackage: "https://www.npmjs.com/package/@sentinel-scan/core",
-  },
-  {
-    id: "scamdetect",
-    name: "ScamDetect",
-    featured: true,
-    shortDescription:
-      "Multilingual AI-powered scam and phishing detector for SMS, email, WhatsApp, and URLs — real-time SAFE/SUSPICIOUS/PHISHING classification with threat intelligence and screenshot OCR.",
-    description:
-      "Built ScamDetect, a free multilingual platform that analyzes suspicious messages and URLs for phishing and scam indicators. Features Llama3-powered AI classification, VirusTotal and PhishTank URL checks, screenshot OCR text extraction, indigenous-language UI translation via Lingo.dev, and optional user dashboards for scan history.",
-    stack: ["Next.js", "Supabase", "TypeScript", "Ollama", "VirusTotal API", "Lingo.dev"],
-    livePreview: "https://www.scamdetect.run/",
-    sourceCode: "https://github.com/blaycoder/ScamDetect-Multilingual",
-  },
-  {
-    id: "aki-solutions",
-    name: "AKI Solutions Website (UK & Nigeria)",
-    featured: false,
-    shortDescription:
-      "Contributed to the corporate website redesign & digital transformation for UK and Nigeria — migrated the legacy stack to React.js, Bootstrap, and Framer Motion.",
-    description:
-      "Contributed to the redesign and modernization of the AKI Solutions corporate website, improving visual presentation, service communication and project storytelling. Migrated the tech stack from HTML, CSS, JavaScript, and PHP to React.js, Bootstrap, and Framer Motion.",
-    credit: "Professional work completed at AKI Solutions Ltd.",
-    stack: ["React.js", "Bootstrap", "Framer Motion", "PHP"],
-    links: [
-      { label: "UK", url: "https://akisolutions.co.uk" },
-      { label: "Nigeria", url: "https://akisolutions.com.ng" },
-    ],
-    caseStudy: "/case-studies/aki-solutions",
-  },
-  {
     id: "eschool-ng",
     name: "eSchool.ng — School Management Platform",
-    featured: false,
+    featured: true,
     shortDescription:
       "Contributed to the redesign and UX of a customizable school management platform, plus backend work on the demo request flow.",
     description:
       "Contributed to the development and improvement of eSchool.ng, a customizable school management platform covering student and staff management, attendance, results, fees and accounting, inventory, communication, live learning and AI-assisted lesson notes. Redesigned the website across its major pages, improved visual hierarchy and UI, and worked on the backend for the demo request form.",
-    credit: "Professional work completed at AKI Solutions Ltd.",
+    credit: "Professional Work · AKI Solutions Ltd.",
     stack: [
       "Frontend Development",
       "UI/UX",
@@ -142,6 +121,73 @@ export const projects: Project[] = [
     ],
     livePreview: "https://eschool-ng.com",
     caseStudy: "/case-studies/eschool-ng",
+  },
+  {
+    id: "aki-solutions",
+    name: "AKI Solutions — Corporate Website Redesign & Digital Transformation",
+    featured: true,
+    shortDescription:
+      "Contributed to the corporate website redesign & digital transformation for UK and Nigeria — migrated the legacy stack to React.js, Bootstrap, and Framer Motion.",
+    description:
+      "Contributed to the redesign and modernization of the AKI Solutions corporate website, improving visual presentation, service communication and project storytelling. Migrated the tech stack from HTML, CSS, JavaScript, and PHP to React.js, Bootstrap, and Framer Motion.",
+    credit: "Professional Work · AKI Solutions Ltd.",
+    stack: ["React.js", "Bootstrap", "Framer Motion", "PHP"],
+    links: [
+      { label: "UK", url: "https://akisolutions.co.uk" },
+      { label: "Nigeria", url: "https://akisolutions.com.ng" },
+    ],
+    caseStudy: "/case-studies/aki-solutions",
+  },
+  {
+    id: "sentinel",
+    name: "Sentinel",
+    featured: true,
+    shortDescription:
+      "Open-source static analysis CLI built in TypeScript — uses AST parsing to catch API contract mismatches and missing error handling before deployment. 900+ downloads across its published npm packages.",
+    description:
+      "Built Sentinel, an open-source static analysis CLI that parses source code into an AST to catch API contract mismatches and unhandled error paths before they reach production. Built entirely in TypeScript as an npm workspaces monorepo, MIT licensed with minimal runtime dependencies, and published as two npm packages, @sentinel-scan/core and @sentinel-scan/cli, which have combined for 900+ downloads.",
+    credit: "Open Source · Personal Project",
+    stack: ["TypeScript", "Node.js", "AST Parsing", "CLI Architecture", "npm workspaces"],
+    sourceCode: "https://github.com/blaycoder/sentinel",
+    npmPackage: "https://www.npmjs.com/package/@sentinel-scan/core",
+    links: [
+      { label: "CLI package on npm", url: "https://www.npmjs.com/package/@sentinel-scan/cli" },
+    ],
+  },
+  {
+    id: "scamdetect",
+    name: "ScamDetect",
+    featured: true,
+    shortDescription:
+      "Multilingual AI-powered scam and phishing detector for SMS, email, WhatsApp, and URLs — real-time SAFE/SUSPICIOUS/PHISHING classification with threat intelligence and screenshot OCR.",
+    description:
+      "Built ScamDetect, a free multilingual platform that analyzes suspicious messages and URLs for phishing and scam indicators. Features Llama3-powered AI classification, VirusTotal and PhishTank URL checks, screenshot OCR text extraction, indigenous-language UI translation via Lingo.dev, and optional user dashboards for scan history.",
+    credit: "Personal Project",
+    stack: ["Next.js", "Supabase", "TypeScript", "Ollama", "VirusTotal API", "Lingo.dev"],
+    livePreview: "https://www.scamdetect.run/",
+    sourceCode: "https://github.com/blaycoder/ScamDetect-Multilingual",
+  },
+  {
+    id: "spacehq",
+    name: "SpaceHQ",
+    featured: false,
+    shortDescription:
+      "Production React.js SaaS for a UK co-working and virtual address provider — signup and plan-selection flows with Stripe Checkout, customer and admin dashboards, subscription management.",
+    description:
+      "Built a production React.js SaaS platform for SpaceHQ Ltd, a UK co-working and virtual address provider. Implemented signup and plan-selection flows with Stripe Checkout, customer and admin dashboards, and subscription management using TanStack Query, Zustand, Stripe, and Framer Motion. Applied security patterns including safeUser whitelisting and idempotency keys on payment flows.",
+    stack: ["React.js", "TanStack Query", "Zustand", "Stripe", "Framer Motion"],
+    livePreview: "https://spacehqltd.com/",
+  },
+  {
+    id: "saabis-beauty",
+    name: "Saabis Beauty",
+    featured: false,
+    shortDescription:
+      "WordPress hair salon site with a custom-built Booking Pro plugin — Stripe + Paystack checkout, deposit and fee logic, PHP 8.2 compatible.",
+    description:
+      "Developed saabisbeauty.co.uk, a WordPress hair salon website featuring a custom-built Booking Pro plugin with Stripe and Paystack checkout, deposit and fee logic, built on PHP 8.2.",
+    stack: ["WordPress", "PHP 8.2", "Stripe", "Paystack"],
+    livePreview: "https://saabisbeauty.co.uk",
   },
   {
     id: "charity-management",
@@ -340,8 +386,8 @@ export const faq: FaqItem[] = [
 ];
 
 export const closingCta = {
-  headline: "Available for freelance & contract work",
-  subtext: "Let's build something bold together — drop me a line.",
+  headline: "Have a product or website that needs to be built or improved?",
+  subtext: "Let's discuss what you're trying to solve.",
   availability: true,
 };
 
@@ -361,8 +407,22 @@ export function buildKnowledgeChunks(): KnowledgeChunk[] {
       id: "about",
       type: "about",
       title: "About Ayomide",
-      text: `${about.name} — ${about.role}. ${about.description} Skills loadout: ${loadout.join(", ")}. Resume: ${about.resume}`,
+      text: `${about.name} — ${about.role}. ${about.description} ${positioning} ${aboutSection.paragraphs.join(" ")} Core strengths: ${loadout.join(", ")}. Resume: ${about.resume}`,
       metadata: { type: "about" },
+    },
+    {
+      id: "credibility",
+      type: "about",
+      title: "What I build",
+      text: `${credibility.headline} ${credibility.subtext}`,
+      metadata: { type: "about" },
+    },
+    {
+      id: "capabilities",
+      type: "skills",
+      title: "What I Do",
+      text: capabilities.map((c) => `${c.title}: ${c.description}`).join(" "),
+      metadata: { type: "skills" },
     },
     {
       id: "skills",
