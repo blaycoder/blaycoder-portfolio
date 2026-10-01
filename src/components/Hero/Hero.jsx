@@ -2,7 +2,7 @@ import { about } from "../../portfolio";
 import SectionShell from "../brutal/SectionShell";
 import BrutalButton from "../brutal/BrutalButton";
 import LoadoutStrip from "./LoadoutStrip";
-import MemoryMatchGame from "./MemoryMatchGame";
+import HeroCaseStudyCard from "./HeroCaseStudyCard";
 
 const Hero = () => {
   const { name, role, description } = about;
@@ -50,7 +50,7 @@ const Hero = () => {
         </div>
 
         <div className="mx-auto w-full min-w-0 max-w-sm sm:max-w-md md:mx-0 md:max-w-none">
-          <MemoryMatchGame />
+          <HeroCaseStudyCard />
         </div>
       </div>
     </SectionShell>
